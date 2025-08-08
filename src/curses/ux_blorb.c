@@ -38,8 +38,8 @@
 #include "ux_frotz.h"
 #include "ux_blorb.h"
 
-f_setup_t f_setup;
-u_setup_t u_setup;
+extern f_setup_t f_setup;
+extern u_setup_t u_setup;
 
 FILE *blorb_fp;
 bb_result_t blorb_res;
