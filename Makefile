@@ -1,3 +1,8 @@
+# New lines for portability between FreeBSD and Linux
+INSTALL ?= install
+INSTALL_PROGRAM ?= $(INSTALL) -m 755
+INSTALL_DIR ?= $(INSTALL) -d
+
 # Define path for ar
 AR = /usr/bin/ar
 
@@ -292,8 +297,8 @@ $(BLORB_TARGET): $(BLORB_OBJECT)
 	@echo
 
 install: $(NAME)
-	@install -D -m 755 $(BINNAME)$(EXTENSION) "$(DESTDIR)$(PREFIX)/bin/$(BINNAME)$(EXTENSION)"
-	@install -D -m 644 doc/$(NAME).6 "$(DESTDIR)$(MAN_PREFIX)/man/man6/$(NAME).6"
+	@$(INSTALL_DIR) "$(DESTDIR)$(PREFIX)/bin"
+	@$(INSTALL_PROGRAM) "$(BINNAME)$(EXTENSION)" "$(DESTDIR)$(PREFIX)/bin/$(BINNAME)$(EXTENSION)"
 
 uninstall:
 	@rm -f "$(DESTDIR)$(PREFIX)/bin/$(NAME)"
