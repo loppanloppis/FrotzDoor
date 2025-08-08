@@ -17,7 +17,7 @@ CFLAGS += -Wall -Wextra -std=gnu99
 # These are good for regular use.
 OPTS = -O2 -fomit-frame-pointer -falign-functions=2 -falign-loops=2 -falign-jumps=2
 # These are handy for debugging.
-#OPTS = $(CFLAGS) -g
+OPTS = $(CFLAGS) -g
 
 # Define where you want Frotz installed (typically /usr/local).
 #
@@ -53,22 +53,22 @@ CURSES = -lncurses
 # Just in case your operating system keeps its user-added header files
 # somewhere unusual...
 #
-#INCL = -I/usr/local/include
+INCL = -I/usr/local/include
 #INCL = -I/usr/pkg/include
 #INCL = -I/usr/freeware/include
 #INCL = -I/5usr/include
 ## INCL path for Apple MacOS Sierra 10.12 plus MacPorts
-INCL = -I/opt/local/include
+#INCL = -I/opt/local/include
 
 # Just in case your operating system keeps its user-added libraries
 # somewhere unusual...
 #
-#LIB = -L/usr/local/lib
+LIB = -L/usr/local/lib
 #LIB = -L/usr/pkg/lib
 #LIB = -L/usr/freeware/lib
 #LIB = -L/5usr/lib
 ## LIB path for Apple MacOS Sierra 10.12 plus MacPorts
-LIB = -L/opt/local/lib
+#LIB = -L/opt/local/lib
 
 # Uncomment this if you're compiling Unix Frotz on a machine that lacks 
 # the strrchr() libc library call.  If you don't know what this means,
